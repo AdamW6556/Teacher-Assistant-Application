@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/projektnavigation"
+    app:startDestination="@id/ekran1fragment">
+
+
+    <fragment
+        android:id="@+id/ekran1fragment"
+        android:name="com.example.projektnr1.View.Ekran1fragment"
+        android:label="Ekran1fragment"
+        tools:layout="@layout/ekran1_fragment">
+        <action
+            android:id="@+id/action_ekran1Fragment_to_fragmentlistykursu"
+            app:destination="@id/kursfragment" />
+        <action
+            android:id="@+id/action_ekran1Fragment_to_fragmentlistystudent"
+            app:destination="@id/listastudentfragment" />
+        <action
+            android:id="@+id/action_ekran1Fragment_to_fragmentraport"
+            app:destination="@id/raportFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/raportFragment"
+        android:name="com.example.projektnr1.View.Raportfragment"
+        android:label="RaportFragment"
+        tools:layout="@layout/fragment_raport"/>
+
+    <fragment
+        android:id="@+id/kursfragment"
+        android:name="com.example.projektnr1.View.Kursfragment"
+        android:label="PrzedmiotyFragment"
+        tools:layout="@layout/fragment_kursfragment">
+        <action
+            android:id="@+id/action_listakurs_to_listastudent"
+            app:destination="@id/listastudentfragment" />
+        <action
+            android:id="@+id/action_listakursow_to_dodajkurs"
+            app:destination="@id/dodajkurs" />
+
+
+        <action
+            android:id="@+id/action_listakursow_to_edytujkurs"
+            app:destination="@id/edytujkurs" />
+
+
+        <action
+            android:id="@+id/action_listakursow_to_studentwkursie"
+            app:destination="@id/studentwkursie"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/listastudentfragment"
+        android:name="com.example.projektnr1.View.FragmentListstudent"
+        android:label="Fragmentstudentlist"
+        tools:layout="@layout/fragment_liststudent">
+        <action
+            android:id="@+id/action_fragmentliststudent_to_edytujstudent"
+            app:destination="@id/edytujstudent" />
+        <action
+            android:id="@+id/action_fragmentliststudent_to_dodajstudent"
+            app:destination="@id/dodajstudent" />
+        <action
+            android:id="@+id/action_fragmentliststudent_to_kurswstudencie"
+            app:destination="@id/kurswstudencie" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/edytujstudent"
+        android:name="com.example.projektnr1.View.Edytujstudentfragment"
+        android:label="Edycjastudenta"
+        tools:layout="@layout/fragment_edytujstudentfragment">
+        <action
+            android:id="@+id/action_edytujstudent_to_listastudentfragment"
+            app:destination="@id/listastudentfragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/dodajstudent"
+        android:name="com.example.projektnr1.View.Dodajstudentfragment"
+        android:label="Dodajstudenta"
+        tools:layout="@layout/fragment_dodajstudentfragment">
+        <action
+            android:id="@+id/action_dodajstudent_to_listastudentfragment"
+            app:destination="@id/listastudentfragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/dodajkurs"
+        android:name="com.example.projektnr1.View.Dodajkursfragment"
+        android:label="Dodaj przedmiot"
+        tools:layout="@layout/fragment_dodajkursfragment" >
+        <action
+            android:id="@+id/action_dodajkurs_to_listakursu"
+            app:destination="@id/kursfragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/edytujkurs"
+        android:name="com.example.projektnr1.View.Edytujkursfragment"
+        android:label="Edycjakurs"
+        tools:layout="@layout/fragment_edytujkursfragment">
+        <action
+            android:id="@+id/action_edytujkurs_to_kurslista"
+            app:destination="@id/kursfragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/studentwkursie"
+        android:name="com.example.projektnr1.View.Studentwkursiefragment"
+        android:label="Listakursuwstudencie"
+        tools:layout="@layout/fragment_studentwkursiefragment">
+        <action
+            android:id="@+id/action_studentwkursie_to_studentdokursu"
+            app:destination="@id/studentdokursu" />
+        <action
+            android:id="@+id/action_studentwkursie_to_listaocen"
+            app:destination="@id/listaocen" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/kurswstudencie"
+        android:name="com.example.projektnr1.View.Kurswstudenciefragment"
+        android:label="Przedmiotywstudencie"
+        tools:layout="@layout/fragment_kurswstudenciefragment"
+        >
+        <action
+            android:id="@+id/action_kurswstudencie_to_listastudentfragment"
+            app:destination="@id/listastudentfragment"
+           />
+        <action
+            android:id="@+id/action_kurswstudencie_to_kursdostudenta"
+            app:destination="@id/kursdostudenta" />
+        <action
+            android:id="@+id/action_kurswstudencie_to_listaocen"
+            app:destination="@id/listaocen" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/studentdokursu"
+        android:name="com.example.projektnr1.View.Dodajstudentdokursfragment"
+        android:label="Dodajstudentdokurs"
+        tools:layout="@layout/fragment_dodajstudentdokursfragment"
+        >
+        <action
+            android:id="@+id/action_dodajstudentdokursu_to_studentwkursie"
+            app:destination="@id/studentwkursie" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/kursdostudenta"
+        android:name="com.example.projektnr1.View.Dodajkursdostudentfragment"
+        android:label="Dodajkursdostudenta"
+        tools:layout="@layout/fragment_dodajkursdostudentfragment">
+        <action
+            android:id="@+id/action_dodjakursdostudent_to_kurswstudencie"
+            app:destination="@id/kurswstudencie" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/listaocen"
+        android:name="com.example.projektnr1.View.Listaocenfragment"
+        android:label="Listaocen"
+        tools:layout="@layout/fragment_listaocenfragment">
+        <action
+            android:id="@+id/action_listaocen_to_dodajocene"
+            app:destination="@id/dodajocene" />
+        <action
+            android:id="@+id/action_listaocen_to_studentwkursie"
+            app:destination="@id/studentwkursie" />
+        <action
+            android:id="@+id/action_listaocen_to_kurswstudencie"
+            app:destination="@id/kurswstudencie" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/dodajocene"
+        android:name="com.example.projektnr1.View.Dodajocenefragment"
+        android:label="Oceny"
+        tools:layout="@layout/fragment_dodajocenefragment"
+        >
+        <action
+            android:id="@+id/action_dodajocene_to_listaocen"
+            app:destination="@id/listaocen" />
+    </fragment>
+
+
+</navigation>
